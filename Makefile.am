@@ -40,10 +40,6 @@ $(PATHFILES): Makefile
 dist_man_MANS = mtr.8 mtr-packet.8
 PATHFILES += man/mtr.8 man/mtr-packet.8
 
-install-exec-hook:
-	`setcap cap_net_raw+ep $(DESTDIR)$(sbindir)/mtr-packet` \
-	|| chmod u+s $(DESTDIR)$(sbindir)/mtr-packet
-
 mtr_SOURCES = ui/mtr.c ui/mtr.h \
               ui/net.c ui/net.h \
               ui/cmdpipe.c ui/cmdpipe.h \
